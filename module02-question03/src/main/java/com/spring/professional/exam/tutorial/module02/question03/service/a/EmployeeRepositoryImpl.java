@@ -17,4 +17,8 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     @Override
     public void deleteEmployee(Employee employee) {
     }
+
+    public void noOverRidingMethod(Employee employee) {
+        System.out.println("noOverRidingMethod " + employee);
+    }
 }

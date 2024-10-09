@@ -2,6 +2,7 @@ package com.spring.professional.exam.tutorial.module02.question03;
 
 import com.spring.professional.exam.tutorial.module02.question03.ds.Employee;
 import com.spring.professional.exam.tutorial.module02.question03.service.a.EmployeeRepository;
+import com.spring.professional.exam.tutorial.module02.question03.service.a.EmployeeRepositoryImpl;
 import com.spring.professional.exam.tutorial.module02.question03.service.b.AlternateEmployeeRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,6 +17,9 @@ public class Runner {
         Employee employee = employeeRepository.findEmployeeById(5);
         employeeRepository.saveEmployee(employee);
         employeeRepository.deleteEmployee(employee);
+
+        EmployeeRepositoryImpl obj = new EmployeeRepositoryImpl();
+        obj.noOverRidingMethod(employee);
 
         alternateEmployeeRepository.findEmployeeById(5);
         alternateEmployeeRepository.saveEmployee(employee);

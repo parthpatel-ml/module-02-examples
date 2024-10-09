@@ -7,6 +7,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan
 @EnableAspectJAutoProxy
-//@EnableAspectJAutoProxy(proxyTargetClass = true)
+//@EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true) // now only CGLIB proxy is used.
 public class ApplicationConfiguration {
 }
