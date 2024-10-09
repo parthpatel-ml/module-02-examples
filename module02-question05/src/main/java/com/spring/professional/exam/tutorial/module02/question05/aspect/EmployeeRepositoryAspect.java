@@ -22,11 +22,13 @@ public class EmployeeRepositoryAspect {
         System.out.println("after - " + joinPoint.getSignature());
     }
 
-    @AfterThrowing(value = "serviceOrSamePackageRepository()", throwing = "exception")
-    public void afterThrowing(JoinPoint joinPoint, Exception exception) {
-        System.out.println("after throwing exception - " + joinPoint.getSignature() + " - exception = " + exception);
+    // Throwing argument name 'myException_2' was not bound in advice arguments
+    @AfterThrowing(value = "serviceOrSamePackageRepository()", throwing = "myException")
+    public void afterThrowing(JoinPoint joinPoint, Exception myException) {
+        System.out.println("after throwing exception - " + joinPoint.getSignature() + " - exception = " + myException);
     }
 
+    // Returning argument name 'returnValue_2' was not bound in advice arguments
     @AfterReturning(value = "serviceOrSamePackageRepository()", returning = "returnValue")
     public void afterReturning(JoinPoint joinPoint, Object returnValue) {
         System.out.println("after returning " + joinPoint.getSignature() + " - returnValue = " + returnValue);

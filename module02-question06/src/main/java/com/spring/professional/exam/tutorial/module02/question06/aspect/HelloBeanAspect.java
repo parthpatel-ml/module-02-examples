@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class HelloBeanAspect {
-    @Pointcut("within(com.spring.professional.exam.tutorial.module02.question06.beans.*)")
+//    @Pointcut("within(com.spring.professional.exam.tutorial.module02.question06.beans.*)")
+    @Pointcut("bean(helloBean)")
     public void withinBeansPackage() {
+        System.out.println("Sout inside pointcut expression method ");
     }
 
     @Before("withinBeansPackage()")
