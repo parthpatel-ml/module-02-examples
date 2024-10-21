@@ -36,5 +36,9 @@ public class Runner {
         employeeBean.getCubicId();
         employeeBean.getName();
         employeeBean.getWorkPhone();
+
+        CustomClass bean = context.getBean(CustomClass.class);
+        bean.method_one();
+        bean.annotation_within();
     }
 }
